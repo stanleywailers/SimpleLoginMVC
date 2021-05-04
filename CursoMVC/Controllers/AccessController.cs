@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CursoMVC.Models;
 
 namespace CursoMVC.Controllers
 {
@@ -18,9 +19,27 @@ namespace CursoMVC.Controllers
         {
             try
             {
-                return Content("1");
+                using(cursomvcEntities db = new cursomvcEntities())
+                {
+                    var lst = from d in db.users
+                              where d.email == user && d.password == password && d.idState ==1
+                              select d;
+
+                    if(lst.Count() > 0)
+                    {
+                        Session["user"] = lst.FirstOrDefault();
+                        return Content("1");
+                    }
+                    else
+                    {
+                        return Content("Usuario invalido :(");
+                    }
+                }
+
+              
             }
             catch (Exception a)
+            
             {
                 return Content("Ocurrio un error :(" + a.Message);
             }
