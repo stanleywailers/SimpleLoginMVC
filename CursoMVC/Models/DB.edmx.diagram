@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a1ac3487e5964627badf353aed4c726b" Name="Diagram1" >
-        <EntityTypeShape EntityType="cursomvcModel.cstate" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="cursomvcModel.cstate" Width="1.5" PointX="0.75" PointY="1.25" />
         <EntityTypeShape EntityType="cursomvcModel.user" Width="1.5" PointX="3" PointY="0.875" />
         <AssociationConnector Association="cursomvcModel.FK_user_cstate" />
       </Diagram>
